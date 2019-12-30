@@ -28,7 +28,7 @@ $resuilt = $db->query($sql)->fetch_all();
 	if(isset($_POST["login"])){
 		$_SESSION["UserName"]=$_POST["UserName"];
 		$_SESSION["Passwords"]=$_POST["Passwords"];
-		if ($_SESSION["UserName"]== $UserName && $_SESSION["Passwords"] == $Passwords) {
+		if ($_SESSION["UserName"]== $resuilt[1][1] && $_SESSION["Passwords"] ==$resuilt[1][2]) {
 			header("location:Project3b.php");
 			echo "đăng Nhập thành công ";
 		}else{
