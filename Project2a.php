@@ -1,10 +1,12 @@
 <?php
 	if(isset($_POST["login"])){
-		$_SESSION["UserName"]=$_POST["UserName"];
+		$_SESSION["userNames"]=$_POST["UserName"];
 		$_SESSION["Passwords"]=$_POST["Passwords"];
-		if ($_SESSION["UserName"] == $UserName && $_SESSION["Passwords"] == $Passwords) {
-			header("location:Project1/Project1a.php");
+		if ($_SESSION["userNames"] =="Admin" && $_SESSION["Passwords"] == "123") {
+			header("location:Project1a.php");
 			echo "đăng Nhập thành công ";
+		}else{
+			echo "Vui Lòng Thử Lại!!!!";
 		}
 	}
 ?>
@@ -14,7 +16,7 @@
 	<title></title>
 </head>
 <body>
-	<form action="Projectfinal.php" method="post">
+	<form action="Project2a.php" method="post">
 		<h1>Login</h1>
 		<label>UserName</label>
 		<input type="text" name="UserName">
